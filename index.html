@@ -13,6 +13,7 @@
     <title>Document</title>
   </head>
   <body>
+    <div class="container"></div>
     <script>
       function test() {
         fetch("http://localhost:5500/forecast", {
@@ -23,7 +24,10 @@
         }).then(result => {
           return result.json();
         })
-        .then(data => console.log(data))
+        .then(data => {
+          console.log(data);
+          document.querySelector('.container').innerHTML = JSON.stringify(data.currently);
+        })
         .catch(err => console.log(err));
       }
       test();
