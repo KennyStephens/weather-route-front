@@ -1,10 +1,6 @@
 function test()  {
   fetch('http://localhost:5500/')
-  .then(res => res.json())
-  .then(result => {
-    console.log(result);
-  })
+  .then(res => console.log(res))
   .catch(err => console.log(err));
-};
-
+}
 test();
